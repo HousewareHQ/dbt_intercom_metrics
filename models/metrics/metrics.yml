@@ -1,0 +1,113 @@
+version: 2
+sources: []
+models: []
+metrics:
+- name: intercom__monthly_ticket_volume
+  label: Intercom Monthly Ticket Volume
+  model: ref('intercom__main_conversations')
+  description: Number of intercom tickets generated monthly
+  type: count_distinct
+  sql: CONVERSATION_ID
+  timestamp: CREATED_AT
+  time_grains: [month]
+  filters: []
+  dimensions: []
+- name: intercom__monthly_closed_tickets
+  label: Intercom Monthly Closed Tickets
+  model: ref('intercom__main_conversations')
+  description: Number of tickets closed monthly
+  type: count
+  sql: state
+  timestamp: CREATED_AT
+  time_grains: [month]
+  filters:
+    - field: state
+      operator: "="
+      value: "'closed'"
+  dimensions: []
+- name: intercom__monthly_open_tickets
+  label: Intercom Monthly Open Tickets
+  model: ref('intercom__main_conversations')
+  description: Number of monthly open tickets
+  type: count
+  sql: state
+  timestamp: CREATED_AT
+  time_grains: [month]
+  filters:
+    - field: state
+      operator: "="
+      value: "'open'"
+  dimensions: []  
+- name: intercom__monthly_resolution_rate
+  label: Intercom Monthly Resolution Rate
+  model: ref('intercom__main_conversations')
+  description: Percentage of tickets closed monthly
+  type: average
+  sql: is_conversation_closed
+  timestamp: CREATED_AT
+  time_grains: [month]
+  filters: []
+  dimensions: []  
+- name: intercom__monthly_csat_score
+  label: Intercom Monthly CSAT Score 
+  model: ref('intercom__main_conversations')
+  description: Percentage of positive ratings defining customer satisfaction score 
+  type: average
+  sql: is_conversation_rating_positive
+  timestamp: CREATED_AT
+  time_grains: [month]
+  filters: []
+  dimensions: []    
+- name: intercom__monthly_customer_initiated_conversations
+  label: Intercom Monthly Customer Initiated Conversations 
+  model: ref('intercom__main_conversations')
+  description: Number of conversations customer have initiated monthly
+  type: count_distinct
+  sql: CONVERSATION_ID
+  timestamp: CREATED_AT
+  time_grains: [month]
+  filters:
+    - field: source_delivered_as
+      operator: "="
+      value: "'customer_initiated'"
+  dimensions: []    
+- name: intercom__monthly_average_ticket_volume
+  label: Intercom Monthly Average Ticket Volume 
+  model: ref('intercom_monthly_ticket_volume')
+  description: Average number of tickets recieved every month
+  type: average
+  sql: INTERCOM_MONTHLY_TICKET_VOLUME
+  timestamp: PERIOD
+  time_grains: [year]
+  filters: []
+  dimensions: []
+- name: intercom__average_resolution_time_in_hours
+  label: Intercom Average Resolution Time in Hours 
+  model: ref('intercom__main_conversations')
+  description: Average time taken to resolve ticket monthly
+  type: average
+  sql: REPLY_TIME_IN_HOURS
+  timestamp: CREATED_AT
+  time_grains: [month]
+  filters:
+    - field: source_delivered_as
+      operator: "="
+      value: "'customer_initiated'"
+    - field: state
+      operator: "="
+      value: "closed"
+  dimensions: []
+- name: intercom__average_response_time_in_hours
+  label: Intercom Average Response Time in Hours 
+  model: ref('intercom__main_conversations')
+  description: Average time taken to respond to a ticket every month
+  type: average
+  sql: REPLY_TIME_IN_HOURS
+  timestamp: CREATED_AT
+  time_grains: [month]
+  filters:
+    - field: source_delivered_as
+      operator: "="
+      value: "'customer_initiated'"
+  dimensions: []
+
