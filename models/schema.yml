@@ -121,11 +121,16 @@ models:
         description: ""
       - name: intercom_monthly_closed_tickets
         description: ""
-  - name: _intercom_monthly_average_first_response_time
+  - name: intercom_average_response_time_in_hours
     columns:
       - name: period
         description: ""
-      - name: intercom_monthly_average_first_response_time
+      - name: intercom_average_response_time_in_hours
         description: ""
-      
+  - name: intercom_average_resolution_time_in_hours
+    columns:
+      - name: period
+        description: ""
+      - name: intercom_average_resolution_time_in_hours
+        description: ""    
     
