@@ -65,4 +65,13 @@ metrics:
   time_grains: [month]
   filters: []
   dimensions: []    
-      
+- name: intercom_monthly_average_ticket_volume
+  label: Intercom Monthly Average Ticket Volume 
+  model: ref('intercom_total_ticket_volume')
+  description: Average number of tickets recieved every month
+  type: average
+  sql: INTERCOM_MONTHLY_TICKET_VOLUME
+  timestamp: PERIOD
+  time_grains: [year]
+  filters: []
+  dimensions: []      
