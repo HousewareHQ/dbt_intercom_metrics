@@ -16,7 +16,7 @@ models:
         description: ""
 
 
-  - name: intercom_main_conversations
+  - name: intercom__main_conversations
     description: "Intercom conversations data enriched with response time and conversation status"
     columns:
       - name: conversation_id
@@ -66,71 +66,71 @@ models:
       - name: reply_time_in_hours
         description: ""
 
-  - name: intercom_monthly_average_ticket_volume
+  - name: intercom__monthly_average_ticket_volume
     description: "Average number of tickets recieved every month"
     columns:
       - name: period
         description: ""
-      - name: intercom_monthly_average_ticket_volume
+      - name: intercom__monthly_average_ticket_volume
         description: ""
 
-  - name: intercom_monthly_csat_score
+  - name: intercom__monthly_csat_score
     description: "Percentage of positive ratings defining customer satisfaction score"
     columns:
       - name: period
         description: ""
-      - name: intercom_monthly_csat_score
+      - name: intercom__monthly_csat_score
         description: ""
 
-  - name: intercom_monthly_customer_initiated_conversations
+  - name: intercom__monthly_customer_initiated_conversations
     description: "Number of conversations customer have initiated monthly"
     columns:
       - name: period
         description: ""
-      - name: intercom_monthly_customer_initiated_conversations
+      - name: intercom__monthly_customer_initiated_conversations
         description: ""
 
-  - name: intercom_monthly_open_tickets
+  - name: intercom__monthly_open_tickets
     description: "Number of monthly open tickets"
     columns:
       - name: period
         description: ""
-      - name: intercom_monthly_open_tickets
+      - name: intercom__monthly_open_tickets
         description: ""
 
-  - name: intercom_monthly_resolution_rate
+  - name: intercom__monthly_resolution_rate
     description: "Percentage of tickets closed monthly"
     columns:
       - name: period
         description: ""
-      - name: intercom_monthly_resolution_rate
+      - name: intercom__monthly_resolution_rate
         description: ""
 
-  - name: intercom_monthly_ticket_volume
+  - name: intercom__monthly_ticket_volume
     description: "Number of intercom tickets generated monthly"
     columns:
       - name: period
         description: ""
-      - name: intercom_monthly_ticket_volume
+      - name: intercom__monthly_ticket_volume
         description: ""
 
-  - name: intercom_monthly_closed_tickets
+  - name: intercom__monthly_closed_tickets
     description: "Number of tickets closed monthly"
     columns:
       - name: period
         description: ""
-      - name: intercom_monthly_closed_tickets
+      - name: intercom__monthly_closed_tickets
         description: ""
-  - name: intercom_average_response_time_in_hours
+  - name: intercom__average_response_time_in_hours
     columns:
       - name: period
         description: ""
-      - name: intercom_average_response_time_in_hours
+      - name: intercom__average_response_time_in_hours
         description: ""
-  - name: intercom_average_resolution_time_in_hours
+  - name: intercom__average_resolution_time_in_hours
     columns:
       - name: period
         description: ""
-      - name: intercom_average_resolution_time_in_hours
+      - name: intercom__average_resolution_time_in_hours
         description: ""    
     
