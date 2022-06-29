@@ -32,7 +32,7 @@ metrics:
   time_grains: [month]
   filters:
     - field: state
-      operator: ""=""
+      operator: "="
       value: "'open'"
   dimensions: []  
 - name: intercom_monthly_resolution_rate
