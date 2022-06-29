@@ -45,4 +45,24 @@ metrics:
   time_grains: [month]
   filters: []
   dimensions: []  
-    
+- name: intercom_monthly_csat_score
+  label: Intercom Monthly CSAT Score 
+  model: ref('intercom_main_conversations')
+  description: Percentage of positive ratings defining customer satisfaction score 
+  type: average
+  sql: CONVERSATION_RATING_IS_POSITIVE
+  timestamp: CREATED_AT
+  time_grains: [month]
+  filters: []
+  dimensions: []    
+- name: intercom_monthly_customer_initiated_conversations
+  label: Intercom Monthly Customer Initiated Conversations 
+  model: ref('intercom_main_conversations')
+  description: Number of conversations customer have initiated monthly
+  type: count_distinct
+  sql: CONVERSATION_ID
+  timestamp: CREATED_AT
+  time_grains: [month]
+  filters: []
+  dimensions: []    
+      
