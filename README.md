@@ -61,7 +61,7 @@ vars:
 For additional configurations for the source models, please visit the [Intercom source package](https://github.com/fivetran/dbt_intercom_source).
 
 ## (Optional) Step 4: Change build schema
-By default this package will build the Intercom staging models within a schema titled (<target_schema> + `_stg_intercom`) and the Intercom metrics within a schema titled (<target_schema> + `_intercom_metrics`) in your target database. If this is not where you would like your modeled Stripe data to be written to, add the following configuration to your `dbt_project.yml` file:
+By default this package will build the Intercom staging models within a schema titled (<target_schema> + `_stg_intercom`) and the Intercom metrics within a schema titled (<target_schema> + `_intercom_metrics`) in your target database. If this is not where you would like your modeled Intercom data to be written to, add the following configuration to your `dbt_project.yml` file:
 
 ```yml
 # dbt_project.yml
