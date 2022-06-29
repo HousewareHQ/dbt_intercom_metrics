@@ -7,7 +7,7 @@
 
 select *
 from {{ metrics.metric(
-    metric_name='intercom_average_resolution_time_in_hours',
+    metric_name='intercom__average_resolution_time_in_hours',
     grain='month',
     dimensions=[],
     secondary_calculations=[]

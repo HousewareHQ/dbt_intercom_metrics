@@ -7,7 +7,7 @@
 
 select *
 from {{ metrics.metric(
-    metric_name='intercom_monthly_ticket_volume',
+    metric_name='intercom__monthly_ticket_volume',
     grain='month',
     dimensions=[],
     secondary_calculations=[]

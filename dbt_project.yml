@@ -3,8 +3,6 @@ config-version: 2
 name: 'intercom_metrics'
 version: '0.1.0'
 
-profile: snowflake-dev-dbt
-
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 
 models:
@@ -27,3 +25,5 @@ vars:
     
   intercom_source: #using to overrite source dependancy 
     intercom_schema: fivetran_intercom
+
+  GOOD_RATING_THRESHOLD: 5
