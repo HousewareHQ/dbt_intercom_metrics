@@ -3,6 +3,8 @@ config-version: 2
 name: 'intercom_metrics'
 version: '0.1.0'
 
+profile: snowflake-dev-dbt
+
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 
 models:

@@ -1,3 +1,131 @@
 
 version: 2
 
+models:
+  - name: dbt_metrics_default_calendar
+    columns:
+      - name: date_day
+        description: ""
+      - name: date_week
+        description: ""
+      - name: date_month
+        description: ""
+      - name: date_quarter
+        description: ""
+      - name: date_year
+        description: ""
+
+
+  - name: intercom_main_conversations
+    description: "Intercom conversations data enriched with response time and conversation status"
+    columns:
+      - name: conversation_id
+        description: ""
+      - name: created_at
+        description: ""
+      - name: assignee_id
+        description: ""
+      - name: assignee_type
+        description: ""
+      - name: conversation_rating_value
+        description: ""
+      - name: conversation_rating_remark
+        description: ""
+      - name: first_contact_reply_created_at
+        description: ""
+      - name: first_contact_reply_type
+        description: ""
+      - name: is_read
+        description: ""
+      - name: source_author_id
+        description: ""
+      - name: source_author_type
+        description: ""
+      - name: source_delivered_as
+        description: ""
+      - name: source_type
+        description: ""
+      - name: source_subject
+        description: ""
+      - name: state
+        description: ""
+      - name: updated_at
+        description: ""
+      - name: waiting_since
+        description: ""
+      - name: snoozed_until
+        description: ""
+      - name: sla_name
+        description: ""
+      - name: sla_status
+        description: ""
+      - name: conversation_rating_is_positive
+        description: ""
+      - name: conversation_is_closed
+        description: ""
+      - name: reply_time_in_hours
+        description: ""
+
+  - name: intercom_monthly_average_ticket_volume
+    description: "Average number of tickets recieved every month"
+    columns:
+      - name: period
+        description: ""
+      - name: intercom_monthly_average_ticket_volume
+        description: ""
+
+  - name: intercom_monthly_csat_score
+    description: "Percentage of positive ratings defining customer satisfaction score"
+    columns:
+      - name: period
+        description: ""
+      - name: intercom_monthly_csat_score
+        description: ""
+
+  - name: intercom_monthly_customer_initiated_conversations
+    description: "Number of conversations customer have initiated monthly"
+    columns:
+      - name: period
+        description: ""
+      - name: intercom_monthly_customer_initiated_conversations
+        description: ""
+
+  - name: intercom_monthly_open_tickets
+    description: "Number of monthly open tickets"
+    columns:
+      - name: period
+        description: ""
+      - name: intercom_monthly_open_tickets
+        description: ""
+
+  - name: intercom_monthly_resolution_rate
+    description: "Percentage of tickets closed monthly"
+    columns:
+      - name: period
+        description: ""
+      - name: intercom_monthly_resolution_rate
+        description: ""
+
+  - name: intercom_monthly_ticket_volume
+    description: "Number of intercom tickets generated monthly"
+    columns:
+      - name: period
+        description: ""
+      - name: intercom_monthly_ticket_volume
+        description: ""
+
+  - name: intercom_monthly_closed_tickets
+    description: "Number of tickets closed monthly"
+    columns:
+      - name: period
+        description: ""
+      - name: intercom_monthly_closed_tickets
+        description: ""
+  - name: _intercom_monthly_average_first_response_time
+    columns:
+      - name: period
+        description: ""
+      - name: intercom_monthly_average_first_response_time
+        description: ""
+      
+    
