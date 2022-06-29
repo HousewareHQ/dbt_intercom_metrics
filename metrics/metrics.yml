@@ -33,5 +33,16 @@ metrics:
   filters:
     - field: state
       operator: ""=""
-      value: "'open'""
-  dimensions: []    
+      value: "'open'"
+  dimensions: []  
+- name: intercom_monthly_resolution_rate
+  label: Intercom Monthly Resolution Rate
+  model: ref('intercom_main_conversations')
+  description: Percentage of tickets closed monthly
+  type: average
+  sql: CONVERSATION_IS_CLOSED
+  timestamp: CREATED_AT
+  time_grains: [month]
+  filters: []
+  dimensions: []  
+    
