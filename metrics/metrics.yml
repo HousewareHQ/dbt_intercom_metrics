@@ -91,3 +91,17 @@ metrics:
       operator: "="
       value: "closed"
   dimensions: []
+- name: intercom_average_response_time_in_hours
+  label: Intercom Average Response Time in Hours 
+  model: ref('intercom_main_conversations')
+  description: Average time taken to respond to a ticket every month
+  type: average
+  sql: REPLY_TIME_IN_HOURS
+  timestamp: CREATED_AT
+  time_grains: [month]
+  filters:
+    - field: source_delivered_as
+      operator: "="
+      value: "'customer_initiated'"
+  dimensions: []
+
