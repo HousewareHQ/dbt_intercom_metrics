@@ -1,4 +1,4 @@
-# Intercom metrics dbt Package ([Docs](https://housewarehq.github.io/dbt_intercom_metrics))
+# Intercom Metrics dbt Package ([Docs](https://housewarehq.github.io/dbt_intercom_metrics))
 
 # 📣 What does this dbt package do?
 This package provides pre-built metrics for Intercom data from [Fivetran's connector](https://fivetran.com/docs/applications/intercom). It uses data in the format described by [this ERD](https://fivetran.com/docs/applications/intercom#schemainformation).
