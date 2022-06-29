@@ -67,11 +67,27 @@ metrics:
   dimensions: []    
 - name: intercom_monthly_average_ticket_volume
   label: Intercom Monthly Average Ticket Volume 
-  model: ref('intercom_total_ticket_volume')
+  model: ref('intercom_monthly_ticket_volume')
   description: Average number of tickets recieved every month
   type: average
   sql: INTERCOM_MONTHLY_TICKET_VOLUME
   timestamp: PERIOD
   time_grains: [year]
   filters: []
-  dimensions: []      
+  dimensions: []
+- name: intercom_average_resolution_time_in_hours
+  label: Intercom Average Resolution Time in Hours 
+  model: ref('intercom_main_conversations')
+  description: Average time taken to resolve ticket monthly
+  type: average
+  sql: REPLY_TIME_IN_HOURS
+  timestamp: CREATED_AT
+  time_grains: [month]
+  filters:
+    - field: source_delivered_as
+      operator: "="
+      value: "'customer_initiated'"
+    - field: state
+      operator: "="
+      value: "closed"
+  dimensions: []
