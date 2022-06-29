@@ -13,15 +13,15 @@ The metrics offered by this package are described below
 
 | **metric**                          | **description**                                                                                                                                                                                                                              |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [intercom_monthly_ticket_volume](https://github.com/HousewareHQ/dbt_intercom_metrics/blob/main/models/metrics/metrics.yml#L138-L150)    | Number of intercom tickets generated monthly.                
-| [intercom_monthly_closed_tickets](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L84-L99)      | Number of tickets closed monthly.                         
-| [intercom_monthly_open_tickets](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L30-L45)    | Number of monthly open tickets.
-| [intercom_monthly_resolution_rate](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L19-L28)    | Percentage of tickets closed monthly.
-| [intercom_monthly_csat_score](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L121-L136)    |         Percentage of positive ratings defining customer satisfaction score.                                                               |
-| [intercom_monthly_customer_initiated_conversations](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L67-L82)    |  Number of conversations customer have initiated monthly.                                     |
-| [intercom_monthly_average_ticket_volume](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L5-L17)    | Average number of tickets recieved every month.                                                         |
-| [intercom_average_resolution_time_in_hours](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L101-L119)    | Average time taken to resolve ticket monthly.               |
-| [intercom_average_response_time_in_hours](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L47-L65)    | Average time taken to respond to a ticket every month.|                                                                                                                                 
+| [intercom_monthly_ticket_volume](https://github.com/HousewareHQ/dbt_intercom_metrics/blob/main/models/metrics/metrics.yml#L5-L14)    | Number of intercom tickets generated monthly.                
+| [intercom_monthly_closed_tickets](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L15-L24)      | Number of tickets closed monthly.                         
+| [intercom_monthly_open_tickets](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L25-L37)    | Number of monthly open tickets.
+| [intercom_monthly_resolution_rate](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L38-L47)    | Percentage of tickets closed monthly.
+| [intercom_monthly_csat_score](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L48-L57)    |         Percentage of positive ratings defining customer satisfaction score.                                                               |
+| [intercom_monthly_customer_initiated_conversations](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L58-L67)    |  Number of conversations customer have initiated monthly.                                     |
+| [intercom_monthly_average_ticket_volume](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L68-L77)    | Average number of tickets recieved every month.                                                         |
+| [intercom_average_resolution_time_in_hours](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L78-L93)    | Average time taken to resolve ticket monthly.               |
+| [intercom_average_response_time_in_hours](https://github.com/HousewareHQ/dbt_stripe_metrics/blob/main/models/metrics/stripe__metrics.yml#L94-L106)    | Average time taken to respond to a ticket every month.|                                                                                                                                 
 
 # 🎯 How do I use the dbt package?
 ## Step 1: Prerequisites
