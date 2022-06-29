@@ -2,13 +2,23 @@ version: 2
 sources: []
 models: []
 metrics:
-- name: intercom_total_ticket_volume
-  label: Intercom Total Ticket Volume
+- name: intercom_monthly_ticket_volume
+  label: Intercom Monthly Ticket Volume
   model: ref('intercom_main_conversations')
-  description: Total number of intercom tickets generated monthly
+  description: Number of intercom tickets generated monthly
   type: count_distinct
   sql: CONVERSATION_ID
   timestamp: CREATED_AT
   time_grains: [month]
   filters: []
   dimensions: []
+- name: intercom_monthly_closed_tickets
+  label: Intercom Monthly Closed Tickets
+  model: ref('intercom_main_conversations')
+  description: Number of tickets closed monthly
+  type: sum
+  sql: CONVERSATION_IS_CLOSED
+  timestamp: CREATED_AT
+  time_grains: [month]
+  filters: []
+  dimensions: []  
