@@ -26,7 +26,7 @@ The metrics offered by this package are described below
 # 🎯 How do I use the dbt package?
 ## Step 1: Prerequisites
 To use this dbt package, you must have the following:
-- At least one Fivetran stripe connector syncing data into your destination. 
+- At least one Fivetran intercom connector syncing data into your destination. 
 - A **BigQuery**, **Snowflake**, **Redshift**, or **PostgreSQL** destination.
 
 
