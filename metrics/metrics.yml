@@ -21,4 +21,17 @@ metrics:
   timestamp: CREATED_AT
   time_grains: [month]
   filters: []
-  dimensions: []  
+  dimensions: []
+- name: intercom_monthly_open_tickets
+  label: Intercom Monthly Open Tickets
+  model: ref('intercom_main_conversations')
+  description: Number of monthly open tickets
+  type: count
+  sql: state
+  timestamp: CREATED_AT
+  time_grains: [month]
+  filters:
+    - field: state
+      operator: ""=""
+      value: "'open'""
+  dimensions: []    
