@@ -22,8 +22,4 @@ vars:
     conversation_tag_history: "{{ ref('stg_intercom__conversation_tag_history') }}"
     team: "{{ ref('stg_intercom__team') }}"
 
-    
-  intercom_source: #using to overrite source dependancy 
-    intercom_schema: fivetran_intercom
-
   GOOD_RATING_THRESHOLD: 5
