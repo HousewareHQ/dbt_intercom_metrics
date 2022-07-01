@@ -7,7 +7,7 @@ metrics:
   model: ref('intercom__main_conversations')
   description: Number of intercom tickets generated monthly
   type: count_distinct
-  sql: CONVERSATION_ID
+  sql: conversation_id
   timestamp: CREATED_AT
   time_grains: [month]
   filters: []
@@ -18,7 +18,7 @@ metrics:
   description: Number of tickets closed monthly
   type: count
   sql: state
-  timestamp: CREATED_AT
+  timestamp: created_at
   time_grains: [month]
   filters:
     - field: state
@@ -31,7 +31,7 @@ metrics:
   description: Number of monthly open tickets
   type: count
   sql: state
-  timestamp: CREATED_AT
+  timestamp: created_at
   time_grains: [month]
   filters:
     - field: state
@@ -44,7 +44,7 @@ metrics:
   description: Percentage of tickets closed monthly
   type: average
   sql: is_conversation_closed
-  timestamp: CREATED_AT
+  timestamp: created_at
   time_grains: [month]
   filters: []
   dimensions: []  
@@ -54,7 +54,7 @@ metrics:
   description: Percentage of positive ratings defining customer satisfaction score 
   type: average
   sql: is_conversation_rating_positive
-  timestamp: CREATED_AT
+  timestamp: created_at
   time_grains: [month]
   filters: []
   dimensions: []    
@@ -63,21 +63,21 @@ metrics:
   model: ref('intercom__main_conversations')
   description: Number of conversations customer have initiated monthly
   type: count_distinct
-  sql: CONVERSATION_ID
-  timestamp: CREATED_AT
+  sql: conversation_id
+  timestamp: created_at
   time_grains: [month]
   filters:
     - field: source_delivered_as
       operator: "="
       value: "'customer_initiated'"
   dimensions: []    
-- name: intercom__monthly_average_ticket_volume
+- name: intercom__monthly_average_ticket_volume #derived from metric: intercom_monthly_ticket_volume
   label: Intercom Monthly Average Ticket Volume 
   model: ref('intercom_monthly_ticket_volume')
   description: Average number of tickets recieved every month
   type: average
-  sql: INTERCOM_MONTHLY_TICKET_VOLUME
-  timestamp: PERIOD
+  sql: intercom_monthly_ticket_volume
+  timestamp: period
   time_grains: [year]
   filters: []
   dimensions: []
@@ -86,8 +86,8 @@ metrics:
   model: ref('intercom__main_conversations')
   description: Average time taken to resolve ticket monthly
   type: average
-  sql: REPLY_TIME_IN_HOURS
-  timestamp: CREATED_AT
+  sql: reply_time_in_hours
+  timestamp: created_at
   time_grains: [month]
   filters:
     - field: source_delivered_as
@@ -102,8 +102,8 @@ metrics:
   model: ref('intercom__main_conversations')
   description: Average time taken to respond to a ticket every month
   type: average
-  sql: REPLY_TIME_IN_HOURS
-  timestamp: CREATED_AT
+  sql: reply_time_in_hours
+  timestamp: created_at
   time_grains: [month]
   filters:
     - field: source_delivered_as
