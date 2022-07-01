@@ -71,12 +71,12 @@ metrics:
       operator: "="
       value: "'customer_initiated'"
   dimensions: []    
-- name: intercom__monthly_average_ticket_volume #derived from metric: intercom_monthly_ticket_volume
+- name: intercom__monthly_average_ticket_volume 
   label: Intercom Monthly Average Ticket Volume 
-  model: ref('intercom_monthly_ticket_volume')
+  model: ref('intercom__monthly_ticket_volume')
   description: Average number of tickets recieved every month
   type: average
-  sql: intercom_monthly_ticket_volume
+  sql: intercom__monthly_ticket_volume
   timestamp: period
   time_grains: [year]
   filters: []
@@ -95,7 +95,7 @@ metrics:
       value: "'customer_initiated'"
     - field: state
       operator: "="
-      value: "closed"
+      value: "'closed'"
   dimensions: []
 - name: intercom__average_response_time_in_hours
   label: Intercom Average Response Time in Hours 

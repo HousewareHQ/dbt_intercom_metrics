@@ -1,4 +1,4 @@
--- depends_on: {{ ref('intercom_main_conversations') }}
+-- depends_on: {{ ref('intercom__main_conversations') }}
 
 
 
