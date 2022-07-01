@@ -22,4 +22,4 @@ vars:
     conversation_tag_history: "{{ ref('stg_intercom__conversation_tag_history') }}"
     team: "{{ ref('stg_intercom__team') }}"
 
-  GOOD_RATING_THRESHOLD: 5
+  good_rating_threshold: 5
