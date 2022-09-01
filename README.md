@@ -73,7 +73,18 @@ models:
   intercom_source:
     +schema: my_new_schema_name # leave blank for just the target_schema
 ```
+## Step 4: Separate metrics into different schema
 
+By default, this package will compute all the metrics in your `target` schema inside `target` database. It's a good practice to add a suffix to your schema defining what source the metrics are coming from 
+Go to your `dbt_project.yml` file
+```yml
+# dbt_project.yml
+...
+config-version: 2
+models:
+  intercom_metrics:
+    +schema: intercom_metrics
+```
 
 # 🗄 Which warehouses are supported?
 This package has been tested on BigQuery, Snowflake.
