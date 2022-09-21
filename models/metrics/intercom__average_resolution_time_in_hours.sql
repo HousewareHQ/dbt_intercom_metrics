@@ -6,8 +6,8 @@
 {{ config(materialized = 'table') }}
 
 select *
-from {{ metrics.metric(
-    metric_name='intercom__average_resolution_time_in_hours',
+from {{ metrics.calculate(
+    metric('intercom__average_resolution_time_in_hours'),
     grain='month',
     dimensions=[],
     secondary_calculations=[]
