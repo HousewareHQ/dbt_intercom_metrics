@@ -7,10 +7,16 @@ require-dbt-version: [">=1.0.0", "<2.0.0"]
 
 models:
   intercom_metrics:
-    +materialized: table
+    metrics:
+      +enabled: true
+      +materialized: table
+
 
 #assigning variables to staged models from fivetran 
 vars: 
+  #enter the schema where your intercom source data is kept. This is the raw data that you sync from fivetran
+  #intercom_source: 
+    #intercom_schema: fivetran_intercom
   intercom_metrics:
     admin: "{{ ref('stg_intercom__admin') }}"
     company_history: "{{ ref('stg_intercom_company_history') }}"
