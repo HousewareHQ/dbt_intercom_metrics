@@ -77,7 +77,7 @@ metrics:
   description: Average number of tickets recieved every month
   calculation_method: average
   expression: intercom__monthly_ticket_volume
-  timestamp: period
+  timestamp: created_at
   time_grains: [year]
   filters: []
   dimensions: []
