@@ -37,7 +37,7 @@ metrics:
     - field: state
       operator: "="
       value: "'open'"
-  dimensions: []  
+  dimensions: []
 - name: intercom__monthly_resolution_rate
   label: Intercom Monthly Resolution Rate
   model: ref('intercom__main_conversations')
@@ -47,19 +47,19 @@ metrics:
   timestamp: created_at
   time_grains: [month]
   filters: []
-  dimensions: []  
+  dimensions: []
 - name: intercom__monthly_csat_score
-  label: Intercom Monthly CSAT Score 
+  label: Intercom Monthly CSAT Score
   model: ref('intercom__main_conversations')
-  description: Percentage of positive ratings defining customer satisfaction score 
+  description: Percentage of positive ratings defining customer satisfaction score
   calculation_method: average
   expression: is_conversation_rating_positive
   timestamp: created_at
   time_grains: [month]
   filters: []
-  dimensions: []    
+  dimensions: []
 - name: intercom__monthly_customer_initiated_conversations
-  label: Intercom Monthly Customer Initiated Conversations 
+  label: Intercom Monthly Customer Initiated Conversations
   model: ref('intercom__main_conversations')
   description: Number of conversations customer have initiated monthly
   calculation_method: count_distinct
@@ -70,19 +70,19 @@ metrics:
     - field: source_delivered_as
       operator: "="
       value: "'customer_initiated'"
-  dimensions: []    
-- name: intercom__monthly_average_ticket_volume 
-  label: Intercom Monthly Average Ticket Volume 
-  model: ref('intercom__main_conversations')
+  dimensions: []
+- name: intercom__monthly_average_ticket_volume
+  label: Intercom Monthly Average Ticket Volume
+  model: ref('intercom__monthly_ticket_volume')
   description: Average number of tickets recieved every month
   calculation_method: average
   expression: intercom__monthly_ticket_volume
-  timestamp: created_at
+  timestamp: date_month
   time_grains: [year]
   filters: []
   dimensions: []
 - name: intercom__average_resolution_time_in_hours
-  label: Intercom Average Resolution Time in Hours 
+  label: Intercom Average Resolution Time in Hours
   model: ref('intercom__main_conversations')
   description: Average time taken to resolve ticket monthly
   calculation_method: average
@@ -98,7 +98,7 @@ metrics:
       value: "'closed'"
   dimensions: []
 - name: intercom__average_response_time_in_hours
-  label: Intercom Average Response Time in Hours 
+  label: Intercom Average Response Time in Hours
   model: ref('intercom__main_conversations')
   description: Average time taken to respond to a ticket every month
   calculation_method: average
@@ -110,4 +110,3 @@ metrics:
       operator: "="
       value: "'customer_initiated'"
   dimensions: []
-
