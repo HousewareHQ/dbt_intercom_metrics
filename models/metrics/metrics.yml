@@ -73,7 +73,7 @@ metrics:
   dimensions: []    
 - name: intercom__monthly_average_ticket_volume 
   label: Intercom Monthly Average Ticket Volume 
-  model: ref('intercom__monthly_ticket_volume')
+  model: ref('intercom__main_conversations')
   description: Average number of tickets recieved every month
   calculation_method: average
   expression: intercom__monthly_ticket_volume
